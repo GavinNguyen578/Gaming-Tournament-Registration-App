@@ -1,0 +1,459 @@
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loggedIn {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(15, 85, 117);
+    color: rgb(32, 199, 163);
+    font-weight: bold;
+}
+
+body {
+    background-image: url("/logo/VS.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+div {
+    height:auto;
+    width:auto;
+    padding: 50px;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    text-align: left;
+    padding: 8px;
+    background-color:aliceblue;
+    width:100%;
+    
+    overflow: auto;
+}
+
+h1{
+    background-image: linear-gradient(to right, red, rgb(31, 143, 207));
+}
+
+.jumbotron {
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.inputLabels {
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    background-color: rgb(31, 31, 31);
+}
+
+.pageLabels {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 226, 255);
+    text-align: center;
+}
+
+.tournamentSignUpLabel {
+    position: fixed;
+    top: 110px;
+}
+
+
+.titleLabels {
+    font-weight: bold;
+}
+
+.contactSubtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 226, 255);
+    background-image: linear-gradient(to right, red, rgb(31, 143, 207));
+    text-align: center;
+}
+
+#contactSubmit {
+    position: relative; 
+    top: -30px;
+}
+
+.submitted-message {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 255, 136);
+}
+
+.form-control {
+    background-color: rgb(185, 215, 233);
+    color: rgb(201, 73, 73);
+    font-weight: bold;
+}
+
+.form-control::placeholder {
+    color: rgb(7, 4, 4);
+    font-weight: bold;
+}
+
+
+#registerButton {
+    margin-top: 10px;
+}
+
+.navbar-custom {
+    height: 80px;
+    width:100%;
+}
+
+.playerlogin{
+    width:500px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 226, 255);
+    text-align: center;  
+}
+
+.registerform{
+    width:500px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 226, 255);
+    text-align: left;
+
+}
+
+.loginbtn{
+    background-color: white;
+    color:black;
+    border: 2px solid rgb(40, 101, 155);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.loginbtn:hover {
+    background-color: rgb(40, 101, 155);
+    color:aliceblue;
+}
+
+.cancelbtn{
+    background-color: white;
+    color:black;
+    border: 2px solid rgb(201, 73, 73);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cancelbtn:hover {
+    background-color: rgb(201, 73, 73);
+    color:aliceblue;
+}
+
+.deletebtn{
+    background-color: rgb(201, 73, 73); 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.playerUpdatebtn{
+    background-color: #0daa7b; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 30px;
+    width: 130px;
+}
+
+.playerUpdatebtn:hover {
+    background-color: #09815d; 
+}
+
+.registerbtn{
+    background-color: white;
+    color:black;
+    border: 2px solid green;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(20, 12, 134, 0.2), 0 6px 20px 0 rgba(8, 21, 138, 0.19);
+}
+
+.registerbtn:hover {
+    background-color: green;
+    color:aliceblue;
+}
+
+.registerbtn2{
+    background-color: green;
+    color:aliceblue;
+}
+
+.cancelbtn2{
+    background-color: rgb(201, 73, 73);
+    color:aliceblue;
+}
+
+.registerbtn2:hover {
+    background-color: white;
+    color:black;
+    border: 2px solid rgb(192, 45, 192);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cancelbtn2:hover{
+    background-color: white;
+    color:black;
+    border: 2px solid ;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.submitbtn{
+    background-color: rgb(192, 45, 192); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.submitBtn:hover {
+    background-color: #5c1e6e;
+    border-color: #5c1e6e;
+  }
+
+.addbtn {
+    background-color: rgb(40, 101, 155); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 600px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+  }
+
+.tournament{
+    background-color: aquamarine;
+    color: aliceblue;
+}
+
+
+.round{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:200px;
+    list-style:none;
+    padding:0;
+}
+.round .spacer{ 
+    flex-grow:1; 
+}
+.round .spacer:first-child,
+.round .spacer:last-child{ 
+    flex-grow:.5; 
+}
+  
+.round .game-spacer{
+    flex-grow:1;
+}
+  
+body{
+    font-family:sans-serif;
+    font-size:small;
+    padding:10px;
+    line-height:1.4em;
+}
+  
+li.game{
+    padding-left:20px;
+}
+  
+li.game.winner{
+    font-weight:bold;
+    color: rgb(40, 101, 155);
+}
+li.game span{
+    float:right;
+    margin-right:5px;
+}
+  
+li.game-top{ border-bottom:1px solid rgb(192, 45, 192); }
+  
+li.game-spacer{ 
+    border-right:1px solid rgb(54, 155, 155);
+    min-height:40px;
+}
+  
+li.game-bottom{ 
+    border-top:1px solid rgb(201, 73, 73);
+}
+
+.ownerSubmit {
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+}
+
+div.ownerSubmit button { 
+    text-align:center; 
+}
+
+.card-container {
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 10px;
+    width: max-content;
+    overflow: hidden;
+}
+      
+.card {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+}
+      
+      
+.unownedEditBtn {
+    background-color: #832c9e;
+    border-color: #832c9e;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.deleteBtn {
+    background-color: rgb(201, 9, 9);
+    border-color: rgb(201, 9, 9);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.unownedEditBtn:hover {
+    background-color: #5c1e6e;
+    border-color: #5c1e6e;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(151, 6, 6);
+    border-color: rgb(151, 6, 6);
+}
+
+.stage {
+    width: 332px;
+    height: 242px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 0 auto;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .stage a {
+    position: absolute;
+  }
+  .stage a img {
+    padding: 10px;
+    border: 1px solid rgb(63, 1, 1);
+    background: rgb(63, 1, 1);
+    width: 310px;
+    height: 220px;
+  }
+
+  .stage a:nth-of-type(1) {
+    animation-name: fader;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 20;
+  }
+  .stage a:nth-of-type(2) {
+    z-index: 10;
+  }
+  .stage a:nth-of-type(n+3) {
+    display: none;
+  }
+
+  @keyframes fader {
+    from { opacity: 1.0; }
+    25% { opacity: 1.0; }
+    75% { opacity: 0.0; }
+    to { opacity: 0.0; }
+  }
+
+ .stage2 {
+    width: 332px;
+    height: 242px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 0 auto;
+    pointer-events: none;
+    cursor: default;
+}
+
+  .stage2 a {
+    position: absolute;
+  }
+  .stage2 a img {
+    padding: 10px;
+    border: 1px solid rgb(4, 9, 87);
+    background: rgb(4, 9, 87);
+    width: 310px;
+    height: 220px;
+  }
+
+  .stage2 a:nth-of-type(1) {
+    animation-name: fader;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 20;
+  }
+  .stage2 a:nth-of-type(2) {
+    z-index: 10;
+  }
+  .stage2 a:nth-of-type(n+3) {
+    display: none;
+  }
+
+  @keyframes fader {
+    from { opacity: 1.0; }
+    25% { opacity: 1.0; }
+    75% { opacity: 0.0; }
+    to { opacity: 0.0; }
+  }
+
+.ownedEditBtn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#grad1 {
+    height: 800px;    
+    background-size: cover;    
+    min-height:100%;
+   position:relative;
+}

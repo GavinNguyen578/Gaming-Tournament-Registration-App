@@ -1,0 +1,184 @@
+
+<%- include ('../partials/header') %>
+
+<%- include ('../partials/main_nav') %>
+
+<!-- Content for the Edit  page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1 class="pageLabels" ><label class="titleLabels"><%= title %></label></h1>
+
+            <form class="form" method="POST">
+                <div>
+              <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                  
+                    <label class="inputLabels" for="tournamentNameTextField">Tournament Name:</label>
+                    <input type="text" class="form-control"
+                    id="tournamentName"
+                    placeholder="Enter the game's name"
+                    name="tournamentName" value="<%= tournament.tournamentName %>" required>
+                    <% } else { %>
+                      <label class="inputLabels" for="tournamentNameTextField">Tournament Name:</label>
+                      <input type="text" class="form-control"
+                      id="tournamentName"
+                      placeholder="Enter the game's name"
+                      name="tournamentName" value="<%= tournament.tournamentName %>" disabled>
+                      <% } %>
+
+                  <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner !== displayName) { %>
+                  <div class="ownerSubmit">
+                    <label class="inputLabels" for="tournamentOwnerTextField">Owner of the Tournament:</label>
+                    <input type="text" class="form-control"
+                    id="tournamentOwnerEdit"
+                    placeholder="Enter tournament owner"
+                    name="tournamentOwner" value="<%= tournament.tournamentOwner %>" required>
+                      <button id="editOwnerSubmitBtn" class="btn btn-primary submitbtn" type="submit">
+                      <i class="fas fa-edit"></i> Submit</button>
+                    </div>
+                      <% } else if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                          <label class="inputLabels" for="tournamentOwnerTextField">Owner of the Tournament:</label>
+                          <input type="text" class="form-control"
+                          id="tournamentOwnerEdit"
+                          placeholder="Enter tournament owner"
+                          name="tournamentOwner" value="<%= tournament.tournamentOwner %>" required>
+                      <% } %>
+                    
+
+                <!--<div class="form-group">
+                    <label class="inputLabels" for="playerIdTextField">Player ID:</label>
+                    <input type="number" class="form-control"
+                    id="playerIdTextField"
+                    placeholder="Enter the player ID"
+                    name="playerID" required>
+                </div> -->
+
+                
+                <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                    <label class="inputLabels" for="regionTextArea">Region:</label>
+                    <select id="regionTextArea" name="region" class="form-control" required>
+                      <option value="" disabled>Choose player's region</option>
+                      <option value="North America" <%= tournament.region === "North America" ? "selected" : "" %>>North America</option>
+                      <option value="South America" <%= tournament.region === "South America" ? "selected" : "" %>>South America</option>
+                      <option value="Europe" <%= tournament.region === "Europe" ? "selected" : "" %>>Europe</option>
+                      <option value="Asia" <%= tournament.region === "Asia" ? "selected" : "" %>>Asia</option>
+                      <option value="Africa" <%= tournament.region === "Africa" ? "selected" : "" %>>Africa</option>
+                      <option value="Australia" <%= tournament.region === "Australia" ? "selected" : "" %>>Australia</option>
+                      <option value="Antarctica" <%= tournament.region === "Antarctica" ? "selected" : "" %>>Antarctica</option>
+                    </select>                             
+                      <% } else { %>
+                      <label class="inputLabels" for="regionTextArea">Region:</label>
+                      <select id="regionTextArea" name="region" class="form-control" disabled>
+                        <option value="" disabled>Choose player's region</option>
+                        <option value="North America" <%= tournament.region === "North America" ? "selected" : "" %>>North America</option>
+                        <option value="South America" <%= tournament.region === "South America" ? "selected" : "" %>>South America</option>
+                        <option value="Europe" <%= tournament.region === "Europe" ? "selected" : "" %>>Europe</option>
+                        <option value="Asia" <%= tournament.region === "Asia" ? "selected" : "" %>>Asia</option>
+                        <option value="Africa" <%= tournament.region === "Africa" ? "selected" : "" %>>Africa</option>
+                        <option value="Australia" <%= tournament.region === "Australia" ? "selected" : "" %>>Australia</option>
+                         <option value="Antarctica" <%= tournament.region === "Antarctica" ? "selected" : "" %>>Antarctica</option>
+                      </select>                                      
+                        <% } %>
+
+
+                
+                      <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                        <label class="inputLabels" for="tournamentStartDate">Tournament start date:</label>
+                        <input type="date" class="form-control"
+                        id="StartDate"
+                        placeholder="Enter the tournament start date"
+                        name="StartDate" value="<%= tournament.StartDate %>" required
+                        min="<%= new Date().toISOString().split("T")[0] %>">
+                    <% } else { %>
+                        <label class="inputLabels" for="tournamentStartDate">Tournament start date:</label>
+                        <input type="date" class="form-control"
+                        id="StartDate"
+                        placeholder="Enter the tournament start date"
+                        name="StartDate" required
+                        min="<%= new Date().toISOString().split("T")[0] %>" value="<%= tournament.StartDate %>" disabled>
+                    <% } %>
+                
+
+                  <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                  <label class="inputLabels" for="tournamentEndDate">Tournament end date:</label>
+                  <input type="date" class="form-control"
+                  id="EndDate"
+                  placeholder="Enter the tournament end date"
+                  name="EndDate" required
+                  min="<%= new Date().toISOString().split("T")[0] %>" value="<%= tournament.EndDate %>">
+                  <% } else { %>
+                    <label class="inputLabels" for="tournamentEndDate">Tournament end date:</label>
+                  <input type="date" class="form-control"
+                  id="EndDate"
+                  placeholder="Enter the tournament end date"
+                  name="EndDate" required
+                  min="<%= new Date().toISOString().split("T")[0] %>" value="<%= tournament.EndDate %>" disabled>
+                    <% } %>
+                
+                <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                <div class="form-group">
+                  <label class="inputLabels" for="des">Description:</label>
+                  <textarea id="descriptionTxt"  name="description" rows="8" cols="50" placeholder="Enter tournament description"><%= tournament.description %></textarea required>
+                <% } else { %>
+                  <div class="form-group">
+                    <label class="inputLabels" for="des">Description:</label>
+                    <textarea disabled id="descriptionTxt"  name="description" rows="8" cols="50" placeholder="Enter tournament description"><%= tournament.description %></textarea>
+                  <% } %>
+                </div>
+
+                <% if (typeof displayName == 'string' && displayName && tournament.tournamentOwner === displayName) { %>
+                  <button class="btn btn-primary submitbtn" type="submit">
+                  <i class="fas fa-edit"></i> Submit</button>
+                  <% } else { %>
+                  <button id="editSubmitBtn" class="btn btn-primary submitbtn" type="submit">
+                  <i class="fas fa-edit"></i> Submit</button>
+                  
+                    <script>
+                      const submitBtn = document.querySelector('#editSubmitBtn');
+                      submitBtn.style.backgroundColor = '#ccc';   
+                      submitBtn.disabled = true;
+                    </script>
+
+                  <% } %>
+
+                    <a href="/tournament-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+                        
+
+            </form>
+            <script>
+                // Get a reference to the player ID input field
+                const playerIdInput = document.getElementById('playerIdTextField');
+              
+                // Add an event listener to the player ID input field to listen for changes
+                playerIdInput.addEventListener('change', () => {
+                  // Get the value of the player ID input field
+                  const playerId = playerIdInput.value;
+
+              /*   *****This validation should be under account creation. At this point of the registration a user should already be created.
+                  // Check if the player ID is less or more than 6 digits long
+                  if (playerId.length < 6) {
+                    playerIdInput.setCustomValidity('Player ID must be 6 digits long.');
+                  } else if (playerId.length > 6) {
+                    playerIdInput.setCustomValidity('Player ID must be 6 digits long.');
+                  } else {
+                    // If it is not, clear the custom validation error
+                    playerIdInput.setCustomValidity('');
+                  }
+              */
+
+                  // Report the validity of the input field (this will show the error message if there is one)
+                  playerIdInput.reportValidity();
+                });
+              </script>              
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ('../partials/bottom_nav') %>  
+
+<%- include ('../partials/footer') %>

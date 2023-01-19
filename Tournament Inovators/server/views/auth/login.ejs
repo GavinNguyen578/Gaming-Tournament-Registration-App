@@ -1,0 +1,52 @@
+<%- include ('../partials/header') %>
+
+<%- include ('../partials/main_nav') %>
+
+<main class="container">
+    <!-- Message Area -->
+    <% if(messages.length > 0) {%>
+        <div class="alert alert-danger">
+            <%= messages %>
+        </div>
+    <% } %>
+
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <h1 class="pageLabels">Please <label class="titleLabels">Login</label></h1>
+            <form method="POST" autocomplete="off" class="playerlogin">
+                <div class="container" style="background-color:rgb(1, 5, 7)">
+                    <div class="playerlogin">
+                        <img src="/logo/player_img.jpg" height="100px" width="100px"> 
+                    </div>
+                    <label for="username"><b>Username:</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required autofocus>
+                    <br>
+                    <label for="password"><b>Password:</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <fieldset class="form-group text-center">
+                       
+                        
+                        <button id="loginbtn" class="loginbtn" type="submit">
+                            <i class="fas fa-solid fa-headset"></i> Login</button>
+                        
+                        <a href="/">
+                            <input type="button" class="cancelbtn" value="Cancel">
+                        </a>
+
+                    </fieldset>
+                    
+                    <a href="/register">Register Here</a>
+
+                    
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<%- include ('../partials/bottom_nav') %>  
+
+<%- include ('../partials/footer')%>

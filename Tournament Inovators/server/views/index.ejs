@@ -1,0 +1,310 @@
+<%- include ('partials/header')%>
+
+<%- include ('partials/main_nav') %>
+  
+ <!-- Comment to be deleted-->
+ 
+  <!-- Main Content -->
+  <main class="container">
+    <div class="jumbotron">
+      <img src="/logo/logo.jpg" height="100px" class="logo">
+      <h1 class="pageLabels" class="display-4">Welcome to the <label class="titleLabels"><%= title %> page!</label></h1><br>
+      
+
+        <!-- Home page starts -->
+
+        <!-- Home page ends -->
+
+
+        <!-- Contact page starts -->
+      <% if (title == "Contact") { %>
+       
+        <% } %> 
+        <!-- Contact page ends -->
+    </div>
+
+        <!-- Home page starts -->
+        <% if (title == "Home") { %>
+        <div class="imgContainer">
+          <div class="stage">
+            <a href="./Assets/images/cs_img.png"><img src="./Assets/images/cs_img.png"></a>
+            <a href="./Assets/images/rl_img.png"><img src="./Assets/images/rl_img.png"></a>
+            </div>
+            <div class="stage2">
+              <a href="./Assets/images/rl_img.png"><img src="./Assets/images/rl_img.png"></a>
+              <a href="./Assets/images/cs_img.png"><img src="./Assets/images/cs_img.png"></a>
+              </div>
+            </div>
+          <% } %>
+
+          <script>
+
+            window.addEventListener("DOMContentLoaded", function(e) {
+          
+
+              var stage = document.getElementById("stage");
+              var stage2 = document.getElementById("stage2");
+              var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+              var arr = stage.getElementsByTagName("a");
+              for(var i=0; i < arr.length; i++) {
+                arr[i].addEventListener("animationend", fadeComplete, false);
+              }
+
+              var fadeComplete2 = function(e) { stage2.appendChild(arr[0]); };
+              var arr2 = stage2.getElementsByTagName("a");
+              for(var h=0; h < arr.length; h++) {
+                arr2[h].addEventListener("animationend", fadeComplete2, false);
+              }
+
+            }, false);
+
+          </script>
+        <!-- Home page ends -->
+
+
+
+        <!-- Contact page starts -->
+        <% if (title == "Contact") { %>
+          <h2 class="contactSubtitle" >Contact Us Here</h2>
+
+      <div class="contactForm">
+        <form method="POST" id="contactForm">
+         <div class="form-group">
+            <label class="inputLabels" for="nameTextField">Name:</label>
+            <input type="text" class="form-control"
+            id="nameTextField"
+            placeholder="Enter name"
+            name="contactForm.name" required>
+        
+            <label class="inputLabels" for="emailTextField">Email:</label>
+            <input type="email" class="form-control"
+            id="emailTextField"
+            placeholder="Enter email address"
+            name="contactForm.email" required>
+          
+            <label  class="inputLabels" for="messageTextField">Message:</label>
+            <input type="text" class="form-control"
+            id="messageTextField"
+            placeholder="Enter message"
+            name="contactForm.message" required>
+        </div>
+          <button class="btn btn-primary submitbtn" id="contactSubmit" type="submit">
+            <i class="fas fa-edit"></i> Submit</button>
+            
+        </form>
+      </div>
+      <% } %>
+        <!-- Contact page ends -->
+        <!-- Tournament Matchup Start -->
+        <% if (title == "Tournament Matchup") { %>
+        <!-- <div class="registerform">
+            <form method="POST" id="registerform">
+              <div class="form-group">
+                <label class="inputLabels" for="gamertagTextField">Gamertag:</label>
+                <input type="text" class="form-control"
+                id="gamertagTextField"
+                placeholder="Enter Gamertag"
+                name="registerform.Gamertag" required>
+            </div>
+                <div class="form-group">
+                  <label class="inputLabels" for="fnTextField">FirstName:</label>
+                  <input type="text" class="form-control"
+                  id="fnTextField"
+                  placeholder="Enter FirstName"
+                  name="registerform.FirstName" required>
+              </div>
+              <div class="form-group">
+                <label class="inputLabels" for="lsTextField">LastName:</label>
+                <input type="text" class="form-control"
+                id="lsTextField"
+                placeholder="Enter LastName"
+                name="registerform.LastName">
+            </div>
+              <div class="form-group">
+                <label  class="inputLabels" for="phoneTextField">Phone:</label>
+                <input type="text" class="form-control"
+                id="phoneTextField"
+                placeholder="Enter Phone"
+                name="registerform.phone" required>
+            </div>
+              <button id="RegisterSubmit" class="btn btn-primary" type="submit">
+                <i class="fas fa-edit"></i> Submit</button>
+            </form>
+          </div> -->
+          <h1>2022 Tournament Matchups</h1>
+<main id="tournament">
+  <ul class="round round-1">
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">IronMonger <span>79</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">TheZodiac <span>48</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">Angelofdeath <span>84</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">Knuckles <span>72</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top ">Sonic <span>55</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom winner">Tails <span>68</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">ChopSuey <span>64</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">TheBully <span>44</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">ISweareSheWasLvl81 <span>54</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">RiotStarter <span>52</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">Moltov <span>65</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">GraveDigger <span>54</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">MrWhite <span>67</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">MrPink <span>63</span></li>
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">KittyBean <span>73</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">MissCat <span>61</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">DeadShot <span>79</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">BloodSport <span>64</span></li>
+    <li class="spacer">&nbsp;</li>
+  </ul>
+  <ul class="round round-2">
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">IronMonger <span>82</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">Angelofdeath <span>56</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">Tails <span>74</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">ChopSuey <span>57</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top ">ISweareSheWasLvl81 <span>48</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom winner">Moltov <span>70</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top ">MrWEhite <span>50</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom winner">DeadShot <span>66</span></li>
+    <li class="spacer">&nbsp;</li>
+  </ul>
+  <ul class="round round-3">
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">IronMonger <span>77</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">Tails <span>69</span></li>
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top ">Moltov <span>61</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom winner">DeadShot <span>71</span></li>
+    <li class="spacer">&nbsp;</li>
+  </ul>
+  <ul class="round round-4">
+    <li class="spacer">&nbsp;</li>
+    
+    <li class="game game-top winner">IronMonger <span>85</span></li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom ">DeadShot <span>63</span></li>
+    
+    <li class="spacer">&nbsp;</li>
+  </ul>   
+</main>
+
+          <% } %>
+                     <!-- Register Player End -->
+          <!--Tournament Matchup Page Ends-->
+          <!-- Active Tournaments Start -->
+        <% if (title == "Register Players") { %>
+            <div id="grad1">
+              <!-- MAIN CONTENT -->
+              <div class="container">
+                <div class="row">
+                  <div class="offset-md-3 col-md-6 col-sm-12">
+                      <form class="form" method="post">
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerOneTextField">PlayerOne</label>
+                          <input type="text" class="form-control" id="PlayerOneTextField"
+                          placeholder="PlayerOne" name="playerone" required>
+                        </div>
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerTwoTextField">PlayerTwo</label>
+                          <input type="text" class="form-control" id="PlayerTwoTextField"
+                          placeholder="PlayerTwo" name="playertwo" required>
+                        </div>
+          
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerThreeTextField">PlayerThree</label>
+                          <input type="text" class="form-control" id="PlayerThreeTextField"
+                          placeholder="PlayerThree" name="playerthree" required>
+                        </div>
+          
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerFourTextField">PlayerFour</label>
+                          <input type="text" class="form-control" id="PlayerFourTextField"
+                          placeholder="PlayerFour" name="playerfour" required>
+                        </div>
+          
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerFiveTextField">PlayerFive</label>
+                          <input type="text" class="form-control" id="PlayerFiveTextField"
+                          placeholder="PlayerFive" name="playerfive" required>
+                        </div>
+          
+          
+                        <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerSixTextField">PlayerSix</label>
+                          <input type="text" class="form-control" id="PlayerSixTextField"
+                          placeholder="PlayerSix" name="playersix"required>
+                        </div>
+          
+                         <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerSevenTextField">PlayerSeven</label>
+                          <input type="text" class="form-control" id="PlayerSevenTextField"
+                          placeholder="PlayerSeven" name="playerseven" required>
+                        </div>
+          
+                         <div style="font-family:verdana; color:white" class="form-group">
+                          <label for="PlayerEightTextField">PlayerEight</label>
+                          <input type="text" class="form-control" id="PlayerEightTextField"
+                          placeholder="PlayerEight" name="playereight" required>
+                        </div>
+                        
+                        
+                        <button type="submit"  class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+                        <a href="/tournament" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+                      </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+           
+          <% } %>
+    
+  </main>
+  
+<%- include ('partials/bottom_nav') %>  
+
+<%- include ('partials/footer') %>
+  
+
+
+
+

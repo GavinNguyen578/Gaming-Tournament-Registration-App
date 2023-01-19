@@ -1,0 +1,54 @@
+<%- include ('../partials/header') %>
+
+<%- include ('../partials/main_nav') %>
+  
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1 class="pageLabels tournamentSignUpLabel" ><label class="titleLabels"><%= title %></label></h1>
+            
+            <div class="card-container">
+            <% for (var i = 0; i < TournamentList.length; i++) { %>
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><b><%= TournamentList[i].tournamentName %></b></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><b>Owned by: </b><%= TournamentList[i].tournamentOwner %></h6>
+                      <p class="card-text"><b>Region: </b><%= TournamentList[i].region %></p>
+                      <p class="card-text"><b>Start: </b><%= TournamentList[i].StartDate %></p>
+                      <p class="card-text"><b>End: </b><%= TournamentList[i].EndDate %></p>
+                      <p class="card-text"><b>Description: </b><%= TournamentList[i].description %></p>
+
+                      <% if (typeof displayName == 'string' && displayName && TournamentList[i].tournamentOwner === displayName) { %>
+                        <a href="/tournament-list/edit/<%= TournamentList[i]._id %>" class="fas fa-pencil-alt btn btn-primary ownedEditBtn">Edit</a>
+                        <a href="/tournament-list/delete/<%= TournamentList[i]._id %>" class="fas fa-trash-alt btn btn-primary deleteBtn">Delete</a>
+                        <a href="/active-tournaments" class="fas fa-edit fa-sm btn btn-primary form-control playerUpdatebtn">View or Update</a>
+                        <% } else { %>
+                            <a href="/tournament-list/edit/<%= TournamentList[i]._id %>" class="fas fa-pencil-alt btn btn-primary unownedEditBtn">Edit</a>
+                            <a href="/register-players" class="fas fa-edit fa-sm btn btn-primary form-control playerUpdatebtn">View or Update</a>
+                            <% } %>
+                        </div>
+                      </div>
+                <% } %>
+                </div>
+            </div>
+            <div class="createTournamentBtn">
+                <% if (typeof displayName == 'string' && displayName) { %>
+                    <a href="/tournament-list/add" class="fas fa-duotone fa-plus btn btn-primary form-control addbtn" id="createTournamentButton">Add a Tournament</a>
+                    <% } else { %>
+                      <a href="/tournament-list/add" class="fas fa-duotone fa-plus btn btn-primary form-control addbtn" id="createTournamentButton" disabled>Add a Tournament</a>
+                    <% } %>
+                </div>
+        </div>
+    </div>
+      
+    <%- include ('../partials/bottom_nav') %>  
+    
+    <%- include ('../partials/footer')%>
+    
+
+
+
+
+

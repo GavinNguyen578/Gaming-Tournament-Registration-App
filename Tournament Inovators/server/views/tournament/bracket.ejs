@@ -1,0 +1,614 @@
+<%- include('../partials/header.ejs'); %>
+<!-- partial:index.partial.html -->
+<div id = "grad1" style="overflow: auto;">
+<div class="container "style="margin-left:0.5rem;" >
+  <h2 style="font-family:verdana; color:white"><%= tournament.Name %></h2>
+  <h4 style="font-family:verdana; color:white;text-align:center;"><%= tournament.Description %></h4>
+  <h5 style="font-family:verdana; color:white;text-align:center"><%= tournament.Finished %> </h3>
+  <div class="tournament-bracket tournament-bracket--rounded"> 
+  <!-- ------------------------ -->
+  <!-- SEMI FINAL -->
+   <!-- ------------------------ -->
+  <div class="tournament-bracket__round tournament-bracket__round--quarterfinals">
+      <h3 class="tournament-bracket__round-title">Quarter finals</h3>
+      <ul class="tournament-bracket__list">
+      <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.PlayerOne %>"><%= tournament.PlayerOne %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreOne %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.PlayerTwo %>"><%= tournament.PlayerTwo %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreTwo %> </span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+          
+            <% if (tournament.CompleteTournament != "TRUE" && tournament.IsActive == "TRUE" ) { %> 
+                  
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                     <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/one/<%= tournament.PlayerOne %>/<%= tournament.PlayerTwo %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></>
+          
+                     <% } %>
+                     
+                    <% } %>
+                  
+                  <% } %>           
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.PlayerThree %>"><%= tournament.PlayerThree %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreThree %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.PlayerFour %>"><%= tournament.PlayerFour %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreFour %></span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+            <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                  
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/two/<%= tournament.PlayerThree %>/<%= tournament.PlayerFour %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    
+                    <% } %>
+                    <% } %>
+                  
+                <% } %>
+            
+          
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.PlayerFive %>"><%= tournament.PlayerFive %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreFive %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.PlayerSix %>"><%= tournament.PlayerSix %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreSix %></span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+            <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                  
+                  
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/three/<%= tournament.PlayerFive %>/<%= tournament.PlayerSix %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    <% } %>
+                    <% } %>
+                  
+                  <% } %>
+           
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.PlayerSeven %>"><%= tournament.PlayerSeven %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreSeven %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.PlayerEight %>"><%= tournament.PlayerEight %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreEight %></span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+            <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                  
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/four/<%= tournament.PlayerSeven %>/<%= tournament.PlayerEight %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    <% } %>
+                    <% } %>
+                  
+                  <% } %>
+           
+          </div>
+        </li>
+       
+       
+       
+       
+      </ul>
+    </div> 
+
+    
+    <div class="tournament-bracket__round tournament-bracket__round--quarterfinals">
+      <h3 class="tournament-bracket__round-title">Semi finals</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.WinnerFirstQuarterFinal %> "><%= tournament.WinnerFirstQuarterFinal %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreNine %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.WinnerSecondQuarterFinal %> "><%= tournament.WinnerSecondQuarterFinal %>  </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreTen %> </span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+            <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                  
+                    <% if (tournament.WinnerFirstQuaterFinal != "WinnerFirstQuaterFinal"&& tournament.WinnerSecondQuarterFinal != "WinnerSecondQuarterFinal") { %>
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/five/<%= tournament.WinnerFirstQuarterFinal %>/<%= tournament.WinnerSecondQuarterFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    <% } %>
+                    <% } %>
+                     <% } %>
+                  
+                  <% } %>
+
+                    
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          
+          
+          <div class=" tournament-bracket__match container2"  tabindex="0">
+          
+          
+            <table class="tournament-bracket__table container2">
+              
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+                
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                
+                  <td class="tournament-bracket__country">
+                  
+                    <span class="tournament-bracket__code" title="<%= tournament.WinnerThirdQuarterFinal %> "><%= tournament.WinnerThirdQuarterFinal %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ca" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreEleven %></span>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner ">
+                  <td class="tournament-bracket__country">
+                    
+                  
+                
+                    <span class="tournament-bracket__code"title="<%= tournament.WinnerFourthQuarterFinal %>"><%= tournament.WinnerFourthQuarterFinal %> </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-kz" aria-label="Flag"></span>
+                    
+                    
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreTwelve %> </span>
+                    
+                    
+                 
+                  </td>
+
+                  
+                </tr>
+
+                
+              </tbody>
+
+              
+                 
+              
+            </table>
+          
+           <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                 
+                  <% if (tournament.WinnerThirdQuaterFinal != "WinnerThirdQuaterFinal"&& tournament.WinnerFourthQuarterFinal != "WinnerFourthQuarterFinal") { %>
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/six/<%= tournament.WinnerThirdQuarterFinal %>/<%= tournament.WinnerFourthQuarterFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    <% } %>
+                    <% } %>
+                    <% } %>
+                  
+                  <% } %>         
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="tournament-bracket__round tournament-bracket__round--gold">
+      <h3 class="tournament-bracket__round-title">Final</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <table class="tournament-bracket__table">
+             
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                  <td class="tournament-bracket__country">
+                    <span class="tournament-bracket__code" title="<%= tournament.WinnerFirstSemiFinal %>  "><%= tournament.WinnerFirstSemiFinal %>  </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-cz" aria-label="Flag"></span>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreThirteen %></span>
+                    
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                  <td class="tournament-bracket__country">
+                    <span class="tournament-bracket__code" title="<%= tournament.WinnerSecondSemiFinal %> "><%= tournament.WinnerSecondSemiFinal %> </sp>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-ru" aria-label="Flag"></span>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number"><%= tournament.ScoreFourteen %></span>
+                   
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive == "TRUE") { %> 
+                  
+                  <% if (tournament.WinnerFirstSemiFinal != "WinnerFirstSemiFinal"&& tournament.WinnerSecondSemiFinal != "WinnerSecondSemiFinal") { %>
+                    <!-- ------------------------ -->
+                    <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <div style="color:white" class="text-center button"><a href="/tournament/<%= tournament._id %>/seven/<%= tournament.WinnerFirstSemiFinal %>/<%= tournament.WinnerSecondSemiFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></div>
+                    <% } %>
+                    <% } %>
+                    <% } %>
+                  
+                  <% } %>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="tournament-bracket__round tournament-bracket__round--gold">
+      <h3 class="tournament-bracket__round-title">Winner</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <table class="tournament-bracket__table">
+             
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+              </thead>  
+              <tbody class="tournament-bracket__content">
+                <tr class="tournament-bracket__team tournament-bracket__team--winner">
+                  <td class="tournament-bracket__country">
+                    <span class="tournament-bracket__code" title="<%= tournament.WinnerFinal %>  "><%= tournament.WinnerFinal %>  </span>
+                    <span class="tournament-bracket__flag flag-icon flag-icon-cz" aria-label="Flag"></span>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    
+                    <span class="tournament-bracket__medal tournament-bracket__medal--gold fa fa-trophy" aria-label="Gold medal"></span>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  <br>
+  <br>
+<div style= "text-align:center;">
+<% if (tournament.CompleteTournament != "TRUE"&& tournament.IsActive === "TRUE") { %>   
+                
+                    <!-- ------------------------ -->
+                    <!-- COMPLETE A TOURNAMENT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+                    <i class="fa fa-check-square-o"></i> 
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <button type="submit"  class="btn btn-primary"><a href="/tournament/<%= tournament._id %>/eight/eight/<%= tournament.WinnerFinal %> %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Complete the tournament</a></button>
+                    <% } %>
+                    <% } %>
+                 
+                 <% } %> 
+
+                 <% if ( tournament.IsActive === "FALSE") { %>   
+                
+                    <!-- ------------------------ -->
+                    <!-- ACTIVATE TOURNAMENT BUTTON HAS BEEN ADDED HERE -->
+                    <!-- ------------------------ -->
+               
+                    <i class="fa fa-check-square-o"></i> 
+                    <% if(displayName) { %>
+                    <% if(userName === tournament.UserName) { %>
+                    <td style="color:white" class="text-center"><a href="/tournament/<%= tournament-list %>/activate" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i>Activate Tournament</a></td>
+                    <% } %>
+                    <% } %>
+                  
+                 <% } %> 
+</div>  
+</div>
+
+</div>
+
+<!-- partial -->
+
+
+<%- include('../partials/footer.ejs'); %>
+
+
+
+
+
+
+
+

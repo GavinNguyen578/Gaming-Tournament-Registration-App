@@ -1,0 +1,89 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script >$(document).on('click','#savePDF',function(){
+    let pdf = new jsPDF();
+    let section=$('body');
+    let page= function() {
+        pdf.save('tournament.pdf');
+       
+    };
+    pdf.addHTML(section,page);
+    })</script>
+<% let finalBracket = tournament.finalBracket; %>
+<style>
+  .tournament-container {
+    overflow-x: auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  .team-box {
+    width: 15rem;
+  }
+  #bracketFinishForm {
+    display: none;
+  }
+</style>
+
+<!-- Top-level container for the brackets -->
+<div class="container wrapper">
+  <div class="margined tournament-container" id="tournamentBrackets">
+    <%- include('partials/bracket', { currentUser: currentUser, owner: tournament.owner, bracket: finalBracket, teams: tournament.teams }) %>
+  </div>
+
+<!--<div class="mb-4 no-print">
+    <button type="button" class="btn btn-info d-block mx-auto" onclick="window.print()">Save as PDF</button>
+    <a href="https://restpack.io/html2pdf/save-as-pdf?private=true?pdf_orientation=landscape?pdf_page=Letter?url=http://localhost:3000/tournaments/view/<%= tournId %>" rel="nofollow" target="_blank">Download Invoce</a>
+  </div>
+</div>-->
+
+  <div class="mb-4 no-print">
+    <button type="button" id="savePDF" class="btn btn-info d-block mx-auto">Save as PDF</button>
+  </div>
+</div>
+
+<!-- A modal (pop-up) for changing information on a bracket -->
+<div class="modal fade" id="bracketFormModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Change Bracket Information</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" id="bracketForm">
+          <input type="hidden" id="bracket-id" name="bracket-id">
+          <div class="form-group">
+            <label for="team1-score" class="col-form-label">Team1</label>
+            <input type="number" class="form-control" id="team1-score" name="team1-score">
+          </div>
+          <div class="form-group">
+            <label for="team2-score" class="col-form-label">Team2</label>
+            <input type="number" class="form-control" id="team2-score" name="team2-score">
+          </div>
+        </form>
+        <form method="POST" action="/tournaments/bracket/finish/<%= tournament.id %>" id="bracketFinishForm">
+          <input type="hidden" id="bracket-finish-id" name="bracket-finish-id">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="bracketForm">Save Scores</button>
+        <button type="submit" class="btn btn-primary" form="bracketFinishForm">Decide Winner</button>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</div>
+<!--<script async src="https://restpack.io/save-as-pdf.js"></script>-->
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js"></script>-->
+<!--<script>
+  const doc = new jsPDF();
+doc.text("Hello world!", 10, 10);
+doc.save("a4.pdf"); 
+</script>-->

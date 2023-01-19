@@ -1,0 +1,114 @@
+<%- include ('../partials/header') %>
+
+<%- include ('../partials/main_nav') %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1 class="pageLabels" ><label class="titleLabels"><%= title %></label></h1>
+
+            <form class="form" method="POST">
+                    
+                    <label class="inputLabels" for="tournamentNameTextField">Tournament Name:</label>
+                    <input type="text" class="form-control"
+                    id="tournamentName"
+                    placeholder="Enter tournament name"
+                    name="tournamentName" required>
+                
+                    <label class="inputLabels" for="tournamentOwnerTextField">Owner of the Tournament:</label>
+                    <input type="text" class="form-control"
+                    id="tournamentOwnerAdd"
+                    placeholder="Enter the owner of the tournament"
+                    name="tournamentOwner" value="<%= displayName %>" required>
+
+                <!--<div class="form-group">
+                    <label class="inputLabels" for="playerIdTextField">Player ID:</label>
+                    <input type="number" class="form-control"
+                    id="playerIdTextField"
+                    placeholder="Enter the player ID"
+                    name="playerID" required>
+                </div> -->
+
+                
+                    <label class="inputLabels" for="regionTextArea">Region:</label>
+                    <select id="regionTextArea" name="region" class="form-control" required>
+                        <option value="" disabled selected>Choose player's region</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">South America</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Antarctica">Antarctica</option>
+                      </select>                      
+                
+
+                
+                  <label class="inputLabels" for="tournamentStartDate">Tournament start date:</label>
+                  <input type="date" class="form-control"
+                  id="StartDate"
+                  placeholder="Enter the tournament start date"
+                  name="StartDate" required
+                  min="<%= new Date().toISOString().split("T")[0] %>">
+                
+
+                
+                  <label class="inputLabels" for="tournamentEndDate">Tournament end date:</label>
+                  <input type="date" class="form-control"
+                  id="EndDate"
+                  placeholder="Enter the tournament end date"
+                  name="EndDate" required
+                  min="<%= new Date().toISOString().split("T")[0] %>">
+                
+
+                <div class="form-group">
+                  <label class="inputLabels" for="des">Description:</label>
+                  <textarea id="descriptionTxt"  name="description" rows="8" cols="50" placeholder="Enter tournament description"></textarea required>
+                
+                </div>
+
+                <button class="btn btn-primary submitbtn" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/tournament-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+                        
+
+            </form>
+            <script>
+                // Get a reference to the player ID input field
+                const playerIdInput = document.getElementById('playerIdTextField');
+              
+                // Add an event listener to the player ID input field to listen for changes
+                playerIdInput.addEventListener('change', () => {
+                  // Get the value of the player ID input field
+                  const playerId = playerIdInput.value;
+
+              /*   *****This validation should be under account creation. At this point of the registration a user should already be created.
+                  // Check if the player ID is less or more than 6 digits long
+                  if (playerId.length < 6) {
+                    playerIdInput.setCustomValidity('Player ID must be 6 digits long.');
+                  } else if (playerId.length > 6) {
+                    playerIdInput.setCustomValidity('Player ID must be 6 digits long.');
+                  } else {
+                    // If it is not, clear the custom validation error
+                    playerIdInput.setCustomValidity('');
+                  }
+              */
+
+                  // Report the validity of the input field (this will show the error message if there is one)
+                  playerIdInput.reportValidity();
+                });
+              </script>              
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ('../partials/bottom_nav') %>  
+
+<%- include ('../partials/footer') %>
